@@ -21,11 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')
     ->name('login.provider')
-    ->where('driver', implode('|', config('auth.socialite.drivers')));
+    ->where('driver', 'google');
 
 Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->name('login.callback')
-    ->where('driver', implode('|', config('auth.socialite.drivers')));
+    ->where('driver', 'google');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
